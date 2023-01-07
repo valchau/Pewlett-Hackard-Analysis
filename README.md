@@ -1,11 +1,17 @@
 # Pewlett-Hackard-Analysis
-Purpose
-The purpose of this analysis is to prepare Pewlett-Hackard, a company with several thousand employees, for the upcoming “silver tsunami”. A large number of employees will begin retiring at a rapid rate in the next few years and the company wants to be prepared with the retirement packages, open positions and employees’ training. In order to ensure a smooth transition this analysis focuses on the following:
+## Purpose
+The purpose of this analysis is to prepare Pewlett-Hackard, a company with several thousand employees, for the upcoming “silver tsunami” that is supposedly coming. A large number of employees are expected to begin retiring, according to this case study, at a rapid rate in the next few years and the company wants to be prepared with the retirement packages, open positions and employees’ training. In truth, these predictions of boomers retiring massively never occured. Largely because many could not afford to retire and also because people are living longer healthier lives than in the past. In additon, laws passed make is more difficult to force people to retire based on their age alone. So these doomsday predictions never came true. Nevertheless, this case study asks us to assume this would have happened.  
 
-Identify the retiring employees by their title.
-Determine the sum of retiring employees grouped by title.
-Identify the employees eligible for participation in the mentorship program.
-Determine the number of roles-to-fill grouped by title and department.
+## The tasks are:
+
+### Retirement: We find out who is expected to retire based on the sterotype that birth date means retirement; ignores other life factors such as disability, caregiving, etc. This looks like a potential lawsuit.
+1. Identify the 'retiring' employees by their birth dates, assuming that employees born between 1952 - 1955 (now ages 71 - 68 years old), are those who are going to retire. This is a pernicous stereotype.
+2. The selected employees' names, birth dates, and most current job title, including the to date and from date for the title are selected for further analysis.
+3. Then the number of retiring employees grouped by title is reported.
+
+### Mentorship: We assume that employees born in the year 1965 (now age 58 years old), are deserving of mentorship. This looks like another lawsuit waiting to happen.
+1. Identify the employees eligible for participation in the mentorship program by their birthdates. 
+2. Determine the number of roles-to-fill grouped by title and department. This does not take into consideration those employees expected to retire.
 Determine the number of qualified, retirement-ready employees to mentor the next generation grouped by title and department.
 
 
