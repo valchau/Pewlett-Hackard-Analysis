@@ -4,40 +4,25 @@ The purpose of this analysis is to prepare Pewlett-Hackard, a company with sever
 
 ## The tasks are:
 
-### Retirement: We find out who is expected to retire based on the sterotype that birth date means retirement; ignores other life factors such as disability, caregiving, etc. This looks like a potential lawsuit.
+### Retirement: 
+We find out who is expected to retire based on the sterotype that birth date means retirement; ignores other life factors such as disability, caregiving, etc. This looks like a potential lawsuit.
 1. Identify the 'retiring' employees by their birth dates, assuming that employees born between 1952 - 1955 (now ages 71 - 68 years old), are those who are going to retire. This is a pernicous stereotype.
 2. The selected employees' names, birth dates, and most current job title, including the to date and from date for the title are selected for further analysis.
 3. Then the number of retiring employees grouped by title is reported.
 
-### Mentorship: We assume that employees born in the year 1965 (now age 58 years old), are deserving of mentorship. This looks like another lawsuit waiting to happen.
+### Mentorship: 
+We assume that employees born in the year 1965 (now age 58 years old), are deserving of mentorship. This looks like another lawsuit waiting to happen.
 1. Identify the employees eligible for participation in the mentorship program by their birthdates. 
 2. Determine the number of roles-to-fill grouped by title and department. This does not take into consideration those employees expected to retire.
 Determine the number of qualified, retirement-ready employees to mentor the next generation grouped by title and department.
 
 
 Background
-The data is gathered in six CSV files and the analysis is performed using relational databases. In this analysis I am using:
+The data is provided in six files, formatted as comma separated data values. We could use Python or other tools to analyze this type of data, but in this case we are using a free open source tool, PostreSQL to create a database and analyze the given data. In this analysis I am using:
 
 QuickDBD to create quick database design for better visualization,
 PostreSQL a database system to load, build and host company’s data, and
 pgAdmin a GUI, using SQL Language to explore, manipulate and extract the data.
-As a part of data modeling and data engineering the fundamental knowledge of constraint rules and awareness of “dirty data” that is flawed and require extensive cleaning is very important. A section in the module summarizes few rules when building the database:
-
-A constraint is a rule that is applied to a column in a SQL table. It will limit the data in a way that provides more accuracy and reliability when working with it. The unique constraint implies that the data in that column is unique. This ensures that if the table were to be updated in the future, nothing will be duplicated (1).
-
-Building clean and organized database with good foundation is essential in order to prevent further anomalies and errors.
-
-Resources
-Data Source:
-
-Six csv files
-Software:
-
-PostreSQL
-pgAdmin 4
-Quick DBD
-ERD and Schema
-ERD An entity-relationship diagram (ERD) is crucial to creating a good database design. It is used as a high-level logical data model, which is useful in developing a conceptual design for databases.
 
 
 
@@ -46,10 +31,9 @@ Figure 1: ERD
 Schema A schema is a blueprint or architecture of how data will look. It is a description of the actual construction of the database, an all-encompassing term that refers to the collective of tables, columns, triggers, relationships, key constraints, functions and procedures. Schemas are important for designig database management systems (DBMS) or relational database management systems (RDBMS).
 
 Results
-1. The list of retiring employees
+1. The list of supposedly retiring employees based on birthdates etween 1952 - 1955. I wonder what happened to employees with earlier birthdates.
 
 The table includes employee number, first name, last name, title, from-date and to-date.
-The query returns 133,776 rows.
 The table displays a list of employees who is going to retire in the next few years.
 The list is long and extensive, yet at-a-glance analysis gives us some insights about the query. Some employees appear more than once due to change of title during their career at Pewlett-Hackard.
 
