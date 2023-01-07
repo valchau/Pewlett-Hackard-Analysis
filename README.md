@@ -17,7 +17,7 @@ We assume that employees born in the year 1965 (now age 58 years old), are deser
 Determine the number of qualified, retirement-ready employees to mentor the next generation grouped by title and department.
 
 
-Background
+## Technial information
 The data is provided in six files, formatted as comma separated data values. We could use Python or other tools to analyze this type of data, but in this case we are using a free open source tool, PostreSQL to create a database and analyze the given data. In this analysis I am using:
 
 QuickDBD to create quick database design for better visualization,
@@ -26,11 +26,11 @@ pgAdmin a GUI, using SQL Language to explore, manipulate and extract the data.
 
 
 
-Figure 1: ERD
+Entity Relationship Diagram
 
 Schema A schema is a blueprint or architecture of how data will look. It is a description of the actual construction of the database, an all-encompassing term that refers to the collective of tables, columns, triggers, relationships, key constraints, functions and procedures. Schemas are important for designig database management systems (DBMS) or relational database management systems (RDBMS).
 
-Results
+## Results for Retiring Employees
 1. The list of supposedly retiring employees based on birthdates etween 1952 - 1955. I wonder what happened to employees with earlier birthdates.
 
 The table includes employee number, first name, last name, title, from-date and to-date.
@@ -38,25 +38,23 @@ The table displays a list of employees who is going to retire in the next few ye
 The list is long and extensive, yet at-a-glance analysis gives us some insights about the query. Some employees appear more than once due to change of title during their career at Pewlett-Hackard.
 
 
-Figure 2: Table with the employee’s data that are retirement-ready
+Table with the employee’s data that are retirement-ready
 
-Overview of the code
+## Overview of the SQL 
 
-To retrieve the data, two tables were merged together - employees and titles - with the inner join and filtered by birth date, that indicates who is about to retire in the next few years with the command WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31').
+1. To retrieve the data, two tables were merged together - employees and titles - with the inner join and filtered by birth date, that indicates who is about to retire in the next few years using the WHERE clause to select birthdates (birth_date BETWEEN '1952-01-01' AND '1955-12-31').
 
-The query has one drawback. It contains all the titles that employees acquired while working at Pewlett-Hackard over the years. This resulted in duplicates, some employees appear two times or more; therefore, the number of retiring employees (133,776) is huge and incorrect.
-
-2. The list of retiring employees without duplicates
+2. The query has one drawback. It contains all the titles that employees acquired while working at Pewlett-Hackard over the years. This resulted in duplicates, some employees appear two times or more; therefore, the number of retiring employees (133,776) is huge and incorrect.
 
 The table includes employee number, first name, last name, title, from-date and to-date.
 The query returns 90,398 rows.
-The table displays a list of employees who are going to retire in the next few years.
-In the table each employee is listed only once, by her or his most recent title.
+
+The table displays a list of employees who expected to retire in the next few years based on their birthdate alone
+In the table each employee is listed only once, by their most recent title.
 
 
-Figure 3: Table with the employee’s data that are retirement-ready without duplicates
+Table with the employee’s data that are retirement-ready without duplicates
 
-Overview of the code
 
 Query contains the same data as the query above with addition of distinct_on command that kept only unique values. To ensure that most recent values are kept, I used command ORDER BY rt.emp_no, rt.to_date DESC to sort the data by descending order on the to_date column. In this case the most recent title was listed first, and after running the query the duplicates listed after the first appearance of the same employees were removed.
 
@@ -67,7 +65,7 @@ The query returns a cohesive table with 7 rows.
 From this table we can quickly see how many employees with certain title will retire in the next few years.
 
 
-Figure 4: Table with the employee grouped by title
+Table with the employee grouped by title
 
 Overview of the code
 
@@ -80,7 +78,7 @@ The query returns 1,549 rows.
 The table displays a list of employees who is eligible for the mentorship program.
 
 
-Figure 5: Table with the employee grouped by title
+Table with the employee grouped by title
 
 Overview of the code
 
