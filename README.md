@@ -8,7 +8,7 @@ In truth, these predictions of boomers retiring massively never occured. Largely
 
 ### Who is expected to retire and what job titles do they have: 
 We are told to find out who is expected to retire based on the sterotype that birth date means retirement; ignoring other life factors such as disability, caregiving, plus the fact that most people have been changing jobs and employers every 5 years or so for the past 20 years at least.
-* We start by dentifying the 'retiring' employees by their birth dates, assuming that employees born between 1952 - 1955 (now ages 71 - 68 years old), are those who are going to retire. 
+* We start by dentifying the 'retiring' employees by their birth dates, assuming that employees born between 1952 - 1955 (now ages 68 to 71 years old), are those who are going to retire. 
 * The selected employees' names, birth dates, and most current job title, including the to date and from date for the title are selected for further analysis.
 * The selected employees might have been at the company long enough to hold several jobs, so the data is trimmed to only present the current job.
 * Then the number of retiring employees grouped by title is reported so we understand what job categories are most likely to be open or need to be filled once the employees retire.
@@ -43,13 +43,14 @@ PostreSQL a database system to load, build and host company’s data, and
 pgAdmin a GUI, using SQL Language to explore, manipulate and extract the data.
 Excel to view the csv files to look at their data, field names and understand the meaning of duplicate rows; these helps determine the primary keys for each table as well as make sense of the task.
 
-VAC VAC stopped here  ****************
 
-## Overview of the SQL 
+## Overview of the Results
 
-1. To retrieve the data, two tables were merged together - employees and titles - with the inner join and filtered by birth date, that indicates who is about to retire in the next few years using the WHERE clause to select birthdates (birth_date BETWEEN '1952-01-01' AND '1955-12-31').
+1. To retrieve the data about which employees are expected to retire, two database tables were accessed and pertinent fields were merged together to create a new database table,  - employees and titles. I used an inner join clause to get data rows satisfying the AND condition to match employees with their titles and dates. The query was filtered by birth date, following the given instructions, assuming that these birthdates represent employees about to retire in the next few years (even though such employees would be 68 to 71 years old now),  using a WHERE clause to select their birthdates (birth_date BETWEEN '1952-01-01' AND '1955-12-31').
 
-2. The query has one drawback. It contains all the titles that employees acquired while working at Pewlett-Hackard over the years. This resulted in duplicates, some employees appear two times or more; therefore, the number of retiring employees (133,776) is huge and incorrect.
+  [Table showing some of the retiring employees](Queries\retirement_titles.PNG)
+
+2. The query contains all the titles that employees have acquired while working at Pewlett-Hackard over the years. This can result in duplicate information since some employees could appear several times in the titles data; therefore, the number of retiring employees (133,776) is larger than we need.  So I filtered it 
 
 The table includes employee number, first name, last name, title, from-date and to-date.
 The query returns 90,398 rows.
