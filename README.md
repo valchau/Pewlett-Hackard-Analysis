@@ -43,39 +43,24 @@ PostreSQL a database system to load, build and host company’s data, and
 pgAdmin a GUI, using SQL Language to explore, manipulate and extract the data.
 Excel to view the csv files to look at their data, field names and understand the meaning of duplicate rows; these helps determine the primary keys for each table as well as make sense of the task.
 
-
 ## Overview of the Results
 
 1. To retrieve the data about which employees are expected to retire, two database tables were accessed and pertinent fields were merged together to create a new database table,  - employees and titles. I used an inner join clause to get data rows satisfying the AND condition to match employees with their titles and dates. The query was filtered by birth date, following the given instructions, assuming that these birthdates represent employees about to retire in the next few years (even though such employees would be 68 to 71 years old now),  using a WHERE clause to select their birthdates (birth_date BETWEEN '1952-01-01' AND '1955-12-31').
 
   [Table showing retiring employees but containing duplicate rows](Queries/retirement_titles.PNG)
 
-2. The query contains all the titles that employees have acquired while working at Pewlett-Hackard over the years. This can result in duplicate information since some employees could appear several times in the titles data; therefore, the number of retiring employees (133,776) is larger than we need.  So I filtered it 
+2. The query contains all the titles that employees have acquired while working at Pewlett-Hackard over the years. This can result in duplicate information since some employees could appear several times in the titles data; therefore, the number of retiring employees in the table above (133,776) is larger than we need.  So I filtered it The table includes employee number, first name, last name, title, from-date and to-date. This new query returned 90,398 rows (employees).
 
-The table includes employee number, first name, last name, title, from-date and to-date.
-The query returns 90,398 rows.
+ [Table showing retiring employees without duplicate rows](Queries/unique_titles.PNG) 
 
-The table displays a list of employees who expected to retire in the next few years based on their birthdate alone
-In the table each employee is listed only once, by their most recent title.
+This new table displays a list of employees who expected to retire in the next few years based on their birthdate alone
+In the table each employee is listed only once using their most recent title.
 
+This query contained the same data as the query above with addition of using the DISTINCT ON clause that kept only unique rows. To ensure that most recent values are kept, I used the ORDER BY clause to sort the data by descending order on the to_date column. In this case the most recent title was listed first, and after running the query the duplicates listed after the first appearance of the same employees were removed.
 
-Table with the employee’s data that are retirement-ready without duplicates
+3. Now, I created a query using GROUP BY with COUNT() to get the sum of the number of retiring employees for each job title. The query returns a table with 7 rows, for the 7 different job titles currently held by employees expected to retire.   
 
-
-Query contains the same data as the query above with addition of distinct_on command that kept only unique values. To ensure that most recent values are kept, I used command ORDER BY rt.emp_no, rt.to_date DESC to sort the data by descending order on the to_date column. In this case the most recent title was listed first, and after running the query the duplicates listed after the first appearance of the same employees were removed.
-
-3. The number of retiring employees grouped by title
-
-The table includes employees’ titles and their sum.
-The query returns a cohesive table with 7 rows.
-From this table we can quickly see how many employees with certain title will retire in the next few years.
-
-
-Table with the employee grouped by title
-
-Overview of the code
-
-In order to retrieve this table I used GROUP BY ut.title command, and it is responsible for grouping the rows by titles. Next, I used its corresponding command COUNT (ut.title) that counts how many times specific title appears in the database.
+[Table showing the count of job titles held by retiring employees ](Queries/retiring titles.PNG) 
 
 4. The employees eligible for the mentorship program
 
@@ -83,12 +68,6 @@ The table contains employee number, first name, last name, birth date, from date
 The query returns 1,549 rows.
 The table displays a list of employees who is eligible for the mentorship program.
 
-
-Table with the employee grouped by title
-
-Overview of the code
-
-To retrieve this data, three tables were merge together: employees, titles and dep_emp with the inner join. The query filters by birth date (that indicates who is eligible for the mentorship program) with the command WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31') and to_date to include only current employees. Duplicates were removed by DISTINCT ON (e.emp_no) command. To ensure I got the most recent titles, I used ORDER BY e.emp_no, ti.from_date DESC command.
 
 
 
