@@ -12,8 +12,8 @@ We find out who is expected to retire based on the sterotype that birth date mea
 
 ### Mentorship: 
 We assume that employees born in the year 1965 (now age 58 years old), are deserving of mentorship. This looks like another lawsuit waiting to happen.
-1. Identify the employees eligible for participation in the mentorship program by their birthdates. 
-2. Determine the number of roles-to-fill grouped by title and department. This does not take into consideration those employees expected to retire.
+* Identify the employees eligible for participation in the mentorship program by their birthdates. 
+* Determine the number of roles-to-fill grouped by title and department. This does not take into consideration those employees expected to retire.
 Determine the number of qualified, retirement-ready employees to mentor the next generation grouped by title and department.
 
 
