@@ -70,9 +70,10 @@ The table displays a list of employees who is eligible for the mentorship progra
 [Table showing employees eligible by birthdate to mentor ](Queries/mentorship_eligiblity.PNG ) 
 
 
+## Summary
+Since the company is preparing for its expected "silver tsunami, " planning is essential, especially when such a large number of the employees might choose to retire in the next few years; in addition many of those expected to retire are currently in senior roles in the company. My analysis above gives good insight about the number of the employees (based on birthdate alone), who are expected to retire soon. However, without knowing which departments retiring senior level employees are leading, it is difficult for the company to plan. This is especailly true since some areas of the company might be more profitable than other locations. 
 
-Summary
-As the company is preparing for the upcoming "silver tsunami" a good planning is essential, especially when such a large number of the employees is involved. Reports above give a good insight about the number of the employees that are about to retire and hold specific title. However, I believe that additional break down per department will be beneficial for the company. In this case headquarters can see what to expect in each department separately. In order to retrieve department name information, I merged additional table departments into existing table retirement_titles with the inner join. After removing the duplicates, with DISTINCT ON command, the table was ready to be used for additional queries.
+In order to retrieve department name information, I merged the departments table with the retirement_titles table, using an inner join to get the intersection of the data. After removing the duplicates, with the DISTINCT ON clause, I got the following: 
 
 
 
