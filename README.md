@@ -58,16 +58,16 @@ In the table each employee is listed only once using their most recent title.
 
 This query contained the same data as the query above with addition of using the DISTINCT ON clause that kept only unique rows. To ensure that most recent values are kept, I used the ORDER BY clause to sort the data by descending order on the to_date column. In this case the most recent title was listed first, and after running the query the duplicates listed after the first appearance of the same employees were removed.
 
-3. Now, I created a query using GROUP BY with COUNT() to get the sum of the number of retiring employees for each job title. The query returns a table with 7 rows, for the 7 different job titles currently held by employees expected to retire.   
+3. Now, I created a query using GROUP BY with COUNT() to get the sum of the number of retiring employees for each job title. The query returns a table with 7 rows, for the 7 different job titles currently held by employees expected to retire.   The number of employees expected to retire is 90,398 people, mostly senior engineers and senior staff positions.
 
 [Table showing the count of job titles held by retiring employees ](Queries/retiring_titles.PNG) 
 
-4. The employees eligible for the mentorship program
+4. Because so many employees might be retiring soon, the company wants another group of older employees (born in 1965 and now age 58), to begin training replacements for retiring employees.  To find the required employees, all selected by birthdate in 1965. This query returns 1,549 rows, meaning that number of employees fit the criteria of being a current employee born in the year 1965. Certainly that is not nearly enough mentors to replace the number of employees expected to retire.  
 
 The table contains employee number, first name, last name, birth date, from date, to date and title.
-The query returns 1,549 rows.
 The table displays a list of employees who is eligible for the mentorship program.
 
+[Table showing employees eligible by birthdate to mentor ](Queries/mentorship_eligiblity.PNG ) 
 
 
 
