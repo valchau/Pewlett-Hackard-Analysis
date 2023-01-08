@@ -1,44 +1,49 @@
 # Pewlett-Hackard-Analysis
 ## Purpose
-The purpose of this analysis is to prepare Pewlett-Hackard, a company with several thousand employees, for the upcoming “silver tsunami” that is supposedly coming. A large number of employees are expected to begin retiring, according to this case study, at a rapid rate in the next few years and the company wants to be prepared with the retirement packages, open positions and employees’ training. In truth, these predictions of boomers retiring massively never occured. Largely because many could not afford to retire and also because people are living longer healthier lives than in the past. In additon, laws passed make is more difficult to force people to retire based on their age alone. So these doomsday predictions never came true. Nevertheless, this case study asks us to assume this would have happened.  
+The purpose of this analysis is to prepare Pewlett-Hackard, a company with several thousand employees, for the upcoming “silver tsunami” that is supposedly coming. A large number of employees are expected to begin retiring, according to this case study, at a rapid rate in the next few years and the company wants to be prepared with the retirement packages, open positions and employees’ training. 
+
+In truth, these predictions of boomers retiring massively never occured. Largely because many could not afford to retire and also because people are living longer healthier lives than in the past. In additon, laws passed make is more difficult to force people to retire based on their age alone. So these doomsday predictions never came true. Nevertheless, this case study asks us to assume this would have happened.  The two main tasks are to identify the employees who are expected to retire based on being born between 1952- 1955,  and also separately identify a separate group of employees, all born in 1965, who are to be selected for a mentorship program. 
 
 ## The tasks are:
 
-### Retirement: 
-We find out who is expected to retire based on the sterotype that birth date means retirement; ignores other life factors such as disability, caregiving, etc. This looks like a potential lawsuit.
-1. Identify the 'retiring' employees by their birth dates, assuming that employees born between 1952 - 1955 (now ages 71 - 68 years old), are those who are going to retire. This is a pernicous stereotype.
-2. The selected employees' names, birth dates, and most current job title, including the to date and from date for the title are selected for further analysis.
-3. Then the number of retiring employees grouped by title is reported.
+### Who is expected to retire and what job titles do they have: 
+We are told to find out who is expected to retire based on the sterotype that birth date means retirement; ignoring other life factors such as disability, caregiving, plus the fact that most people have been changing jobs and employers every 5 years or so for the past 20 years at least.
+* We start by dentifying the 'retiring' employees by their birth dates, assuming that employees born between 1952 - 1955 (now ages 71 - 68 years old), are those who are going to retire. 
+* The selected employees' names, birth dates, and most current job title, including the to date and from date for the title are selected for further analysis.
+* The selected employees might have been at the company long enough to hold several jobs, so the data is trimmed to only present the current job.
+* Then the number of retiring employees grouped by title is reported so we understand what job categories are most likely to be open or need to be filled once the employees retire.
 
-### Mentorship: 
+### Who is selected for a mentorship program: 
 We assume that employees born in the year 1965 (now age 58 years old), are deserving of mentorship. This looks like another lawsuit waiting to happen.
-* Identify the employees eligible for participation in the mentorship program by their birthdates. 
+* Identify the employees eligible for participation in the mentorship program by their birthdates, capturing their job titles, names, and the title 'to and from' dates to determine which employees have already left the company. Note that this does not mean the person retired; only that they are no longer working for Pewlett-Hackard.
+* Next, because employees can have more than one job at the company, the data is filtered so we only have the employees' most recent job title. 
+* Then we get a convenient summary of the job titles of all of the retiring employees so that we can focus on those job titles (it is easier to remember a few job titles than remember the names of all employees expected to retire.
 * Determine the number of roles-to-fill grouped by title and department. This does not take into consideration those employees expected to retire.
 Determine the number of qualified, retirement-ready employees to mentor the next generation grouped by title and department.
 
+## Data provided
+The data is provided in six files, formatted as comma separated data values. We could use Python or other tools to analyze this type of data, but in this case we are using a free open source tool, PostreSQL to create a database and analyze the given data. The given csv files represent:
+* employees
+* departments
+* deparment managers
+* department employees
+* salaries
+* job titles
 
-## Technial information
-The data is provided in six files, formatted as comma separated data values. We could use Python or other tools to analyze this type of data, but in this case we are using a free open source tool, PostreSQL to create a database and analyze the given data. In this analysis I am using:
+## Data created
+Also in csv files, this analysis created several output results.
+* retirement titles - a list of all current employees with birthdates between 1952 and 1955 inclusive, showing all of their job titles and the years they had those jobs
+* unique_titles - trims the retirement titles data so that retiring employees are only listed with their most current job title.
+* retiring titles - containing a summary of the 7 job titles representing all retiring employees (counted only once), to help us understand what roles the company might need to hire or promote people into - but we would need to know the department too in order to really make this decision since some departments might be slimmed down or expaned in the company's future plans.
+* mentorship_eligiblity - this is a file that contains the selected employees whose birthday is during the year 1965. 
 
+## Tools:
 QuickDBD to create quick database design for better visualization,
 PostreSQL a database system to load, build and host company’s data, and
 pgAdmin a GUI, using SQL Language to explore, manipulate and extract the data.
+Excel to view the csv files to look at their data, field names and understand the meaning of duplicate rows; these helps determine the primary keys for each table as well as make sense of the task.
 
-
-
-Entity Relationship Diagram
-
-Schema A schema is a blueprint or architecture of how data will look. It is a description of the actual construction of the database, an all-encompassing term that refers to the collective of tables, columns, triggers, relationships, key constraints, functions and procedures. Schemas are important for designig database management systems (DBMS) or relational database management systems (RDBMS).
-
-## Results for Retiring Employees
-1. The list of supposedly retiring employees based on birthdates etween 1952 - 1955. I wonder what happened to employees with earlier birthdates.
-
-The table includes employee number, first name, last name, title, from-date and to-date.
-The table displays a list of employees who is going to retire in the next few years.
-The list is long and extensive, yet at-a-glance analysis gives us some insights about the query. Some employees appear more than once due to change of title during their career at Pewlett-Hackard.
-
-
-Table with the employee’s data that are retirement-ready
+VAC VAC stopped here  ****************
 
 ## Overview of the SQL 
 
