@@ -76,9 +76,7 @@ Since the company is preparing for its expected "silver tsunami, " planning is e
 In order to retrieve department name information, I merged the departments table with the retirement_titles table, using an inner join to get the intersection of the data. After removing the duplicates, with the DISTINCT ON clause, I got the following: 
 
 
-
-Figure 6: Table with retirement-ready employee’s data with added department name
-
+[Table showing retiring employees with their departments ](Queries/dept_retiring_titles.png) 
 
 
 How many roles will need to be filled as the "silver tsunami" begins to make an impact?
