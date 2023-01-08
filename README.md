@@ -48,7 +48,7 @@ Excel to view the csv files to look at their data, field names and understand th
 
 1. To retrieve the data about which employees are expected to retire, two database tables were accessed and pertinent fields were merged together to create a new database table,  - employees and titles. I used an inner join clause to get data rows satisfying the AND condition to match employees with their titles and dates. The query was filtered by birth date, following the given instructions, assuming that these birthdates represent employees about to retire in the next few years (even though such employees would be 68 to 71 years old now),  using a WHERE clause to select their birthdates (birth_date BETWEEN '1952-01-01' AND '1955-12-31').
 
-  [Table showing some of the retiring employees](Queries\retirement_titles.PNG)
+  [Table showing retiring employees but containing duplicate rows](Queries/retirement_titles.PNG)
 
 2. The query contains all the titles that employees have acquired while working at Pewlett-Hackard over the years. This can result in duplicate information since some employees could appear several times in the titles data; therefore, the number of retiring employees (133,776) is larger than we need.  So I filtered it 
 
