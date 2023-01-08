@@ -82,13 +82,12 @@ How many roles will need to be filled as the "silver tsunami" begins to make an 
 The table with retirement titles contains all the information about the employees that are expected to retire in the next few years. To get the number of positions that will be open during this time, I ran additional query to count the number of employees that are expected to retire per department. We want to know which departments are most affected; and this new query gives more precise numbers showing what each department can expect in terms of the number of retiring employees and how many roles might need to be filled.
 
 
-
-Figure 7: Sum of retirement-ready employees group by title and department.
+[retiring employees counted by title and department](Queries/dept_titles_count.png) 
 
 
 Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett-Hackard employees?
-To ensure that are enough qualified staff for training at Pewlett-Hackard I ran a query with additional filter, that returns only employees on higher positions, assuming that those are qualified as mentors. With the command WHERE ut.title IN ('Senior Engineer', 'Senior Staff', 'Technique Leader', 'Manager') the results include only staff on higher positions. From the table we can see how many qualified employees are in each department to train next generation.
+To ensure that are enough qualified staff for training at Pewlett-Hackard I ran a query with an additional filter, that returns only employees with senior in their job titles, assuming that those are most qualified to be mentors. From the table we can see how many such employees there are in each department to train next group of employees, assuming everyone works at the company until retirement age and that age is the main determining factor of when a person will retire.
 
 
 
-Figure 8: Sum of qualified, retirement-ready employees group by title and department
+
