@@ -60,7 +60,7 @@ This query contained the same data as the query above with addition of using the
 
 3. Now, I created a query using GROUP BY with COUNT() to get the sum of the number of retiring employees for each job title. The query returns a table with 7 rows, for the 7 different job titles currently held by employees expected to retire.   
 
-[Table showing the count of job titles held by retiring employees ](Queries/retiring titles.PNG) 
+[Table showing the count of job titles held by retiring employees ](Queries/"retiring titles.PNG") 
 
 4. The employees eligible for the mentorship program
 
