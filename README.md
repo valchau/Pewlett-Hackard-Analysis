@@ -86,11 +86,11 @@ The table with retirement titles contains all the information about the employee
 
 
 Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett-Hackard employees?
-To ensure that are enough qualified staff for training at Pewlett-Hackard I ran a query with an additional filter, that returns only employees with senior in their job titles, assuming that those are most qualified to be mentors. From the table we can see how many such employees there are in each department to train next group of employees, assuming everyone works at the company until retirement age and that age is the main determining factor of when a person will retire. There are not enough employees to mentor if you only ask those born in 1965! 
+To ensure that are enough qualified staff for training at Pewlett-Hackard I ran a query with an additional filter, that returns only employees with senior in their job titles, assuming that those are most qualified to be mentors. From the table we can see how many such employees there are in each department to train next group of employees, assuming everyone works at the company until retirement age and that age is the main determining factor of when a person will retire. There are not enough employees to mentor if you only ask those born in 1965! The table shows only departments and titles (counts them) to show how many possible mentors there are.
 
 [Table mentorship senior employees counted by title and department](Queries/dept_senior_count.png) 
 
 
-
-
+Finally, I would like to say that this analysis assumes the company does not follow this law: https://www.eeoc.gov/statutes/age-discrimination-employment-act-1967
+And I would recommend another way to determine which senior level employees might possibly be planning to retire in the next few years by offering them incentives if you want them to mentor or train others to take their place. Relying on age alone is a deprecated practice.
 
